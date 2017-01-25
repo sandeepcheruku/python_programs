@@ -1,0 +1,31 @@
+
+
+###################
+# swap files      #
+###################
+*.swap
+
+###################
+# compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+*.suo
+
+bin/
+obj/
+
+######################
+# Logs and databases #
+######################
+*.log
+*.sqlite
+# OS generated files #
+######################
+.DS_Store?
+
