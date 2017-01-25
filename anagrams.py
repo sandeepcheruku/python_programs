@@ -1,4 +1,8 @@
 
+"""
+program generates all possible anagrams of input  
+"""
+
 def anagrams(word):
 
     if len(word) <= 1:
@@ -11,5 +15,7 @@ def anagrams(word):
     return tmp
 
 if __name__ == "__main__":
-    print anagrams("abc")
+    print "enter a word"
+    word = raw_input()
+    print anagrams(word)
 
