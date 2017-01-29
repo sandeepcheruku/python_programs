@@ -65,11 +65,11 @@ class BST(object):
     # returns the node which is the Least common ancestor  
     def lca(self,p,q):
         root = self.root
-        s, b = sorted([p, q])
-        while not s <= root.value <= b:
-            # Keep searching since root is outside of [s, b].
-            root = root.left if s <= root.value else root.right
-        # s <= root.val <= b.
+        a, b = sorted([p, q])
+        while not a <= root.value <= b:
+            # Keep searching since root is outside of [a, b].
+            root = root.left if a <= root.value else root.right
+        # a <= root.val <= b.
         return root
 
 # builds the BST tree from matrix notation, 'r' indicates the value of the root 
