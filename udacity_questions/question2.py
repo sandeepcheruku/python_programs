@@ -8,6 +8,7 @@ def is_palindrome(string):
             return False
     return True
 
+# calculates the substrings and stores them 
 def substrings(word):
     tmp = []
     length = len(word)
@@ -37,3 +38,4 @@ if __name__ == "__main__":
     
     #print "enter a string"
     #word = raw_input();
+
