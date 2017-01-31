@@ -71,6 +71,37 @@ class BST(object):
             root = root.left if a <= root.value else root.right
         # a <= root.val <= b.
         return root
+    
+def get_right_child(T1,r):
+    tmp = T1[r]
+    for i,val in enumerate(tmp):
+        if val == 1:
+           index = i
+    
+    if index > r:
+       return index 
+    else:
+       return None
+
+def get_left_child(T1,r):
+    tmp = T1[r]
+    for i,val in enumerate(tmp):
+        if val == 1:
+           if i < r :
+              return i 
+           else:
+              return None
+
+def lca(T1,r,p,q):
+    # print get_right_child(T1,r)
+    # print get_left_child(T1,r)
+
+    a, b = sorted([p, q])
+    while not a <= r <= b:
+          # Keep searching since root is outside of [a, b].
+          r = get_left_child(T1,r) if a <= r else get_right_child(T1,r)
+    # a <= root.val <= b.
+    return r
 
 # builds the BST tree from matrix notation, 'r' indicates the value of the root 
 def build_tree(T1,r):
@@ -107,6 +138,16 @@ if __name__ == "__main__":
          [0, 0, 0, 0, 0, 0, 1],
          [0, 0, 0, 0, 0, 0, 0]]
 
+    print "using the function which just uses the input   "
+    print "lca is :", lca(T1,3,1,4)
+    # expected ans is '3'
+    
+    print "lca is :",lca(T2,4,2,3)
+    # expected '2' 
+    print "lca is :",lca(T2,4,3,6)
+    # expected '4' 
+
+    print "using the function which builds a BST from the input given "
     bst = build_tree(T1,3)
     print "pre-order traversal of tree is :"
     print bst.print_tree()
@@ -126,4 +167,3 @@ if __name__ == "__main__":
     # expected '4' 
     x1 = bst.lca(3,6)
     print "lca is :",x1.value     
-
