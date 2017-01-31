@@ -25,7 +25,8 @@ def substrings(word):
                tmp.append(word[i:j+1])
     return tmp 
 
-def question1(s,t):
+# this fuc generates all possible anagrams and substrings and verifies them accross each one of them 
+def question1_1(s,t):
     substring_list = substrings(s)
     anagram_list = anagrams(t)
     
@@ -36,17 +37,43 @@ def question1(s,t):
 
     return False 
 
+# this program verfies by measuring the frequencies of the substrings 
+def question1(s,t):
+     
+    freq_p = [0] * 256
+    freq_t = [0] * 256
+    len_t = len(s)
+    len_p = len(t)
+
+    if len_p > len_t:
+       return False 
+
+    for i in range(len_p):
+        freq_t[ord(s[i])] +=1
+        freq_p[ord(t[i])] +=1
+
+    for i in range(len_p,len_t):
+        if freq_p == freq_t:
+           return True
+        freq_t[ord(s[i-len_p])] -=1
+        freq_t[ord(s[i])] +=1
+    
+    if freq_p == freq_t:
+       return True
+    else:
+       return False
+
 if __name__ == "__main__":
 
-    # expected ans : True
     print question1("udacity","ad")
     # expected ans : True
     print question1("python","hno")
     # expected ans : False
     print question1("california","lya")
     
-    print "enter the string s:"
+    print "enter the text string on which you wish to search 's':"
     s = raw_input();
-    print "enter the string t:"
+    print "enter the substring t whose of whose anagrams you wish to verify 't':"
     t = raw_input();
+    print question1(s,t)
 
