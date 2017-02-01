@@ -33,7 +33,8 @@
    Approach :  For the given two values, starting from root, kept searching till the root is outside of the given two values while updating
                the root as the children as visited. Used the given input matrix itself to traverse the tree without creating any BST separately
    Complexity: 
-   Time : In the worst case can end with O(n)
+   Time : For finding the child node for node, we are traversing the list of length 'n'. Where n = no of nodes in BST.
+          In the worst case we might need to visit all the nodes ( if sorted elements are formed as BST) and so worst case would be O(n^2) 
 
 -- Question-5:
    Approach : Calculated the length of the linkedlist 'l', and then traversed the linkedlist to read from the requested position using 
