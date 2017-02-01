@@ -1,0 +1,43 @@
+
+-- Question-1:
+   approach: calculated the frequency of the characters in pattern string 't'. while traversing the text string 'S' extracted substrings 
+             which are of size 't'. Verified the frequencies of 't' and substrings if same we have an anagram as substring
+   complexity:
+   Time : For traversing the string O(n) and for comparing frequencies O(k).So, overall complexity is O(n) 
+   space : no extra space is used So O(1) 
+           
+-- Question-2:
+   approach : calculated the substrings, then verified if the substrings are pallindromes keeping track of the longest one 
+   complexity : 
+   Time : for calculating the substrings O(n^2), for verfying if it is pallindrome O(n)
+          for calculating the longest : O(n), where n = no of substrings which is x^2 ( x = no of charecters in string)
+          so time complexity is O(n^2)
+   Space: For storing the substrings O(n^2). So time complexity = O(n^2) 
+
+-- Question-3:
+   approach : For finding out the MST, followed kruskal's algorithm.
+              1.sort the edges by weight
+              2.select the lowest weghted edge, verify if by adding this a cycle is getting generated; if not
+                add it to MST., repeat this for the remaining edges 
+              For
+   Complexity :
+   time :      E = no of edges 
+               V = no of vertices 
+               For sorting the edges : O(ElogE)
+               each find and union take : O(logV). So, for E edges = O(ElogV); total = O(ElogE) + O(ElogV) 
+               E can be = V^2. So, worst case = ElogE or ElogV 
+   space : Assuming each node has connections with every other node; as we are storing in adjacency list format, atmost we require O(n^2) 
+          for a graph of vertices 'n' 
+
+-- Question-4:
+   Approach :  For the given two values, starting from root, kept searching till the root is outside of the given two values while updating
+               the root as the children as visited. Used the given input matrix itself to traverse the tree without creating any BST separately
+   Complexity: 
+   Time : In the worst case can end with O(n)
+
+-- Question-5:
+   Approach : Calculated the length of the linkedlist 'l', and then traversed the linkedlist to read from the requested position using 
+              'l' and 'm'
+   Complexity : 
+   Time : Traversing the linked list of nodes 'n' is O(n), doing it twice is O(2n)
+   sapce : No additional space is used so, O(1) 
