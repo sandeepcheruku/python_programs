@@ -22,12 +22,6 @@ if __name__ == "__main__":
     A = map(int, raw_input().split())
     m = int(raw_input())
 
-    """ # sample inputs 
-    #A = [3, 4, 1, 9, 56, 7, 9, 12]
-    A = [7, 3, 2, 4, 9, 12, 56]
-    m = 5 
-    m = 3
-    """
     #sorting the array to search for substring whose head-tail value is lowest
     A.sort()
     l = len(A)
